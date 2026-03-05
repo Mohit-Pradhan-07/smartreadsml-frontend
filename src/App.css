@@ -1,0 +1,337 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Premium Navbar ── */
+.premium-navbar {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #743988, #2a2a5e, #3939c1);
+  padding: 16px 50px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.navbar .brand-logo {
+  font-family: cursive;
+  font-size: 33px !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+
+.brand-logo:hover {
+  color: #e491ff !important;
+}
+
+.nav-links {
+  gap: 20px;
+}
+
+.nav-item-custom {
+  color: #e0e0e0 !important;
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  transition: 0.3s;
+}
+
+.nav-item-custom:hover {
+  color: #e491ff !important;
+  transform: translateY(-2px);
+}
+
+.logout-btn {
+  background: #ff2d75 !important;
+  border: none !important;
+  padding: 8px 18px !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #ff4f8b !important;
+  transform: scale(1.05);
+}
+
+/* ── Dark / Light Toggle ── */
+.theme-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-track {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+  transition: background 0.3s;
+  overflow: hidden;
+}
+
+.theme-toggle.light .toggle-track {
+  background: rgba(255, 220, 80, 0.3);
+  border-color: rgba(255, 200, 0, 0.5);
+}
+
+.toggle-icon {
+  font-size: 14px;
+  line-height: 1;
+  z-index: 1;
+  transition: opacity 0.3s;
+}
+
+/* In dark mode: show moon, hide sun */
+.theme-toggle.dark .moon  { opacity: 1; }
+.theme-toggle.dark .sun   { opacity: 0.3; }
+
+/* In light mode: show sun, hide moon */
+.theme-toggle.light .moon { opacity: 0.3; }
+.theme-toggle.light .sun  { opacity: 1; }
+
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 2;
+}
+
+/* Slide thumb right in light mode */
+.theme-toggle.light .toggle-thumb {
+  transform: translateX(30px);
+}
+
+/* ═══════════════════════════════════════
+   LIGHT MODE OVERRIDES
+   (applied when body has .light-mode)
+═══════════════════════════════════════ */
+
+/* Hero section */
+body.light-mode .dark-hero {
+  background: radial-gradient(ellipse at 20% 50%, #dce8ff, #f0f4ff 60%);
+}
+
+body.light-mode .dark-hero::before {
+  opacity: 0.15;
+}
+
+body.light-mode .dark-hero::after {
+  opacity: 0.2;
+}
+
+body.light-mode .main-heading {
+  color: #1a1a2e;
+}
+
+body.light-mode .description {
+  color: #444;
+  opacity: 1;
+}
+
+body.light-mode .trending-label {
+  text-shadow: none;
+}
+
+/* Recommendations section */
+body.light-mode .recommend-section {
+  background: linear-gradient(180deg, #f0f4ff 0%, #e8eeff 100%);
+}
+
+body.light-mode .recommend-heading {
+  color: #1a1a2e;
+}
+
+/* Book cards */
+body.light-mode .bookcard {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+body.light-mode .bookcard:hover {
+  border-color: rgba(245, 197, 24, 0.6);
+  box-shadow: 0 8px 28px rgba(245, 197, 24, 0.2);
+}
+
+body.light-mode .bookcard-title {
+  color: #1a1a2e;
+}
+
+body.light-mode .bookcard-author {
+  color: #555;
+}
+
+body.light-mode .bookcard-ratings-count {
+  color: #888;
+}
+
+body.light-mode .bookcard-rate-label {
+  color: #888;
+}
+
+body.light-mode .bookcard-user-rating {
+  border-top-color: rgba(0,0,0,0.08);
+}
+
+body.light-mode .star-btn {
+  color: rgba(0,0,0,0.15);
+}
+
+/* Autocomplete dropdown */
+body.light-mode .suggestions-dropdown {
+  background: #fff;
+  border-color: rgba(245, 197, 24, 0.4);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+body.light-mode .suggestion-item {
+  color: #333;
+}
+
+body.light-mode .suggestion-item:hover {
+  background: rgba(245, 197, 24, 0.1);
+  color: #111;
+}
+
+/* Top50 page */
+body.light-mode .top50-page {
+  background: linear-gradient(180deg, #f0f4ff 0%, #e8eeff 100%);
+}
+
+body.light-mode .top50-stars {
+  opacity: 0.15;
+}
+
+body.light-mode .top50-title {
+  color: #1a1a2e;
+}
+
+body.light-mode .top50-desc {
+  color: #555;
+}
+
+body.light-mode .top50-loading {
+  color: #555;
+}
+/* Nav arrows in light mode */
+body.light-mode .nav-arrow {
+  background: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.2);
+  color: #1a1a2e;
+}
+
+body.light-mode .nav-arrow:hover {
+  background: #f5c518;
+  color: #000;
+  border-color: #f5c518;
+}
+
+/* Search box in light mode */
+body.light-mode .search-box {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+body.light-mode .search-box input {
+  color: #111;
+}
+
+/* Feedback text */
+body.light-mode .loading-text    { color: #b08800; }
+body.light-mode .error-text      { color: #cc0000; }
+body.light-mode .no-results-text { color: #666; }
+
+/* Recommend header divider lines */
+body.light-mode .recommend-header-line {
+  background: linear-gradient(90deg, transparent, rgb(219, 178, 28), transparent);
+}
+
+/* Top50 subtitle & divider */
+body.light-mode .top50-subtitle { 
+  color: #a07000;
+}
+
+body.light-mode .top50-divider {
+  background: linear-gradient(90deg, transparent, #c8a000, transparent);
+}
+
+body.light-mode .top50-spinner {
+  border-color: rgba(180,140,0,0.2);
+  border-top-color: #c8a000;
+}
+
+/* Fix recommend header lines in light mode */
+body.light-mode .recommend-header-line {
+  background: linear-gradient(90deg, transparent, rgba(180, 130, 0, 0.6), transparent);
+  height: 2px;
+}
+
+body.light-mode .recommend-heading {
+  color: #1a1a2e;
+}
+
+/* Classy subtle divider lines - override previous */
+body.light-mode .recommend-header-line {
+  background: linear-gradient(90deg, transparent, rgba(100, 80, 0, 0.2), transparent) !important;
+  height: 1px !important;
+}
+
+body.light-mode .recommend-header {
+  gap: 16px;
+}
+
+body.light-mode .recommend-heading {
+  color: #2a2010;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+body.light-mode .highlight {
+  color: #b8860b;
+  text-shadow: none;
+}

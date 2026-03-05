@@ -1,0 +1,507 @@
+/* ── Background ── */
+.login-bg {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at top left, #0f0c29, #302b63, #24243e);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Orbs ── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  animation: float 8s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+.orb-1 {
+  width: 400px;
+  height: 400px;
+  background: #6a00f4;
+  top: -100px;
+  left: -100px;
+}
+
+.orb-2 {
+  width: 300px;
+  height: 300px;
+  background: #f5c518;
+  bottom: -80px;
+  right: -80px;
+  animation-delay: 2s;
+}
+
+.orb-3 {
+  width: 250px;
+  height: 250px;
+  background: #00c6ff;
+  top: 50%;
+  left: 60%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  from { transform: translateY(0px) scale(1); }
+  to   { transform: translateY(30px) scale(1.05); }
+}
+
+/* ── Card ── */
+.login-card {
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 48px 44px;
+  width: 100%;
+  max-width: 420px;
+  color: white;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* ── Brand ── */
+.brand-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.brand-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #f5c518;
+  box-shadow: 0 0 8px #f5c518;
+}
+
+.brand-name {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: white;
+}
+
+/* ── Icon ── */
+.icon-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.logo-img {
+  width: 52px !important;
+  height: 52px !important;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(245, 197, 24, 0.5));
+}
+
+/* ── Headings ── */
+.login-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: white;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 28px;
+}
+
+/* ── Inputs ── */
+.input-group {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  color: white;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2s, background 0.2s;
+  box-sizing: border-box;
+}
+
+.input-group input::placeholder {
+  color: white;
+  opacity: 0.4;
+}
+
+.input-group input:focus {
+  border-color: #f5c518;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ── Forgot ── */
+.forgot {
+  text-align: right;
+  font-size: 13px;
+  color: #f5c518;
+  cursor: pointer;
+  margin-bottom: 24px;
+  opacity: 0.85;
+}
+
+.forgot:hover {
+  opacity: 1;
+}
+
+/* ── Button ── */
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background: #f5c518;
+  color: #111;
+  font-size: 16px;
+  font-weight: 800;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  box-shadow: 0 0 20px rgba(245, 197, 24, 0.4);
+}
+
+.login-btn:hover {
+  background: #e0b000;
+  transform: translateY(-1px);
+  box-shadow: 0 0 30px rgba(245, 197, 24, 0.6);
+}
+
+/* ── Signup link ── */
+.signup-text {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.signup-text span {
+  color: #f5c518;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.signup-text span:hover {
+  text-decoration: underline;
+}
+
+/* ── Floating Books ── */
+.floating-book {
+  position: absolute;
+  font-size: 80px;  /* was 48px, increase as much as you want */
+  opacity: 0.6;
+  z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 0 10px rgba(245, 197, 24, 0.3));
+}
+
+.fb-1 {
+  width: 120px;
+  top: 5%;
+  left: 6%;
+  animation: floatBook1 6s ease-in-out infinite alternate;
+}
+
+.fb-2 {
+  width: 110px;
+  top: 10%;
+  right: 6%;
+  animation: floatBook2 7s ease-in-out infinite alternate;
+}
+
+.fb-3 {
+  width: 110px;
+  bottom: 8%;
+  left: 5%;
+  animation: floatBook3 8s ease-in-out infinite alternate;
+}
+
+.fb-4 {
+  width: 120px;
+  bottom: 8%;
+  right: 5%;
+  animation: floatBook4 5s ease-in-out infinite alternate;
+}
+
+.fb-5 {
+  width: 90px;
+  top: 45%;
+  left: 3%;
+  animation: floatBook5 9s ease-in-out infinite alternate;
+}
+
+.fb-6 {
+  width: 100px;
+  top: 45%;
+  right: 3%;
+  animation: floatBook6 7s ease-in-out infinite alternate;
+}
+
+.fb-7 {
+  width: 140px;
+  top: 25%;
+  left: 22%;
+  animation: floatBook7 6s ease-in-out infinite alternate;
+}
+
+.fb-8 {
+  width: 150px;
+  bottom: 20%;
+  right: 22%;
+  animation: floatBook8 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatBook1 {
+  from { transform: rotate(-15deg) translateY(0px); }
+  to   { transform: rotate(-12deg) translateY(-20px); }
+}
+
+@keyframes floatBook2 {
+  from { transform: rotate(12deg) translateY(0px); }
+  to   { transform: rotate(15deg) translateY(-25px); }
+}
+
+@keyframes floatBook3 {
+  from { transform: rotate(10deg) translateY(0px); }
+  to   { transform: rotate(7deg) translateY(-18px); }
+}
+
+@keyframes floatBook4 {
+  from { transform: rotate(-8deg) translateY(0px); }
+  to   { transform: rotate(-12deg) translateY(-22px); }
+}
+
+@keyframes floatBook5 {
+  from { transform: rotate(18deg) translateY(0px); }
+  to   { transform: rotate(14deg) translateY(-15px); }
+}
+@keyframes floatBook6 {
+  from { transform: rotate(18deg) translateY(0px); }
+  to   { transform: rotate(14deg) translateY(-15px); }
+}
+@keyframes floatBook7 {
+  from { transform: rotate(18deg) translateY(0px); }
+  to   { transform: rotate(14deg) translateY(-15px); }
+}
+@keyframes floatBook8  {
+  from { transform: rotate(18deg) translateY(0px); }
+  to   { transform: rotate(14deg) translateY(-15px); }
+}
+
+/* ── Signup Night Sky Background ── */
+.signup-bg {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, #0a0a1a, #050510);
+  position: relative;
+  overflow: hidden;
+}
+
+.signup-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    radial-gradient(3px 3px at 5% 10%, white, transparent),
+    radial-gradient(4px 4px at 15% 25%, white, transparent),
+    radial-gradient(3px 3px at 25% 5%, white, transparent),
+    radial-gradient(5px 5px at 35% 40%, white, transparent),
+    radial-gradient(3px 3px at 45% 15%, white, transparent),
+    radial-gradient(4px 4px at 55% 30%, white, transparent),
+    radial-gradient(5px 5px at 65% 8%, white, transparent),
+    radial-gradient(3px 3px at 72% 50%, white, transparent),
+    radial-gradient(4px 4px at 80% 20%, white, transparent),
+    radial-gradient(5px 5px at 90% 35%, white, transparent),
+    radial-gradient(3px 3px at 10% 60%, white, transparent),
+    radial-gradient(4px 4px at 20% 75%, white, transparent),
+    radial-gradient(5px 5px at 30% 85%, white, transparent),
+    radial-gradient(3px 3px at 42% 65%, white, transparent),
+    radial-gradient(4px 4px at 52% 80%, white, transparent),
+    radial-gradient(5px 5px at 60% 70%, white, transparent),
+    radial-gradient(3px 3px at 75% 88%, white, transparent),
+    radial-gradient(4px 4px at 85% 60%, white, transparent),
+    radial-gradient(5px 5px at 92% 78%, white, transparent),
+    radial-gradient(3px 3px at 95% 15%, white, transparent);
+  animation: starTwinkle 3s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.signup-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse at 90% 10%, rgba(200, 220, 255, 0.15), transparent 40%),
+    radial-gradient(ellipse at 10% 90%, rgba(80, 0, 180, 0.2), transparent 40%);
+  pointer-events: none;
+}
+
+@keyframes starTwinkle {
+  0%   { opacity: 0.4; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* Card and books inside signup-bg stay above stars */
+.signup-bg .login-card {
+  z-index: 10;
+}
+
+.signup-bg .floating-book {
+  z-index: 2;
+}
+
+/* ── Forgot Panel ── */
+.forgot-panel {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  text-align: left;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.forgot-panel-title {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 10px;
+}
+
+.forgot-input {
+  width: 100%;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  transition: border 0.2s, background 0.2s;
+}
+
+.forgot-input::placeholder {
+  color: white;
+  opacity: 0.4;
+}
+
+.forgot-input:focus {
+  border-color: #f5c518;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.forgot-btn {
+  width: 100%;
+  padding: 10px;
+  background: #f5c518;
+  color: #111;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  box-shadow: 0 0 15px rgba(245, 197, 24, 0.3);
+}
+
+.forgot-btn:hover {
+  background: #e0b000;
+  transform: translateY(-1px);
+  box-shadow: 0 0 25px rgba(245, 197, 24, 0.5);
+}
+
+.forgot-msg {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #f5c518;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(245, 197, 24, 0.5);
+}
+
+/* ───────── RESET PASSWORD PAGE OVERRIDE ───────── */
+
+/* Pure black background */
+.reset-page {
+  background: #000 !important;
+}
+
+/* Remove stars background */
+.reset-page::before,
+.reset-page::after {
+  display: none !important;
+}
+
+/* Make card solid black with white glow */
+.reset-page .login-card {
+  background: #111 !important;
+  border: 1px solid #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+
+  box-shadow:
+    0 0 20px #ffffff,
+    0 0 40px rgba(255, 255, 255, 0.6),
+    0 0 60px rgba(255, 255, 255, 0.4) !important;
+}
+
+/* White text */
+.reset-page .login-title,
+.reset-page .subtitle,
+.reset-page .brand-name,
+.reset-page label {
+  color: #ffffff !important;
+}
+
+/* White glowing button */
+.reset-page .login-btn {
+  /* background: #ffffff !important; */
+  color: #000 !important;
+  box-shadow:
+    0 0 20px #ffffff,
+    0 0 40px rgba(255, 255, 255, 0.6) !important;
+}
+
+.reset-page .login-btn:hover {
+  box-shadow:
+    0 0 30px #ffffff,
+    0 0 30px rgba(255, 255, 255, 0.8) !important;
+}

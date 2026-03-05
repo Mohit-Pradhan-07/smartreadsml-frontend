@@ -3,15 +3,6 @@ import emailIcon from "./email.png";
 import React, { useState, useEffect } from "react";
 import "./Login.css";
 
-import book1 from "../assets/harry.webp";
-import book2 from "../assets/harry1.webp";
-import book3 from "../assets/123.webp";
-import book4 from "../assets/rectangle-3.webp";
-import book5 from "../assets/rectangle-4.webp";
-import book6 from "../assets/spi.webp";
-import book7 from "../assets/s.webp";
-import book8 from "../assets/war.webp";
-
 function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
